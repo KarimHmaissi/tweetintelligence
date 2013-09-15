@@ -18,7 +18,11 @@
 
         <div id="resultsData" class="">
 
-            <section id="overviewDataSection">
+            <div class="loading">
+                <g:img dir="images" file="logo.png" />
+            </div>
+
+            <section id="overviewDataSection" class="hide">
                 <div class="row">
                     <div class="col-ld-sd-4">
                         <div class="panel panel-primary">
@@ -35,7 +39,7 @@
                 </div>
             </section>
 
-            <section id="followerDataSection">
+            <section id="followerDataSection" class="hide">
                 <div class="row">
                     <div class="col-ld-12">
                         <div class="panel panel-primary">
@@ -69,7 +73,7 @@
                 </div>
             </section>
 
-            <section id="topDomainsSection">
+            <section id="topDomainsSection" class="hide">
                 <div class="row">
                     <div class="col-ld-12">
                         <div class="panel panel-primary">
@@ -96,7 +100,8 @@
                 </div>
             </section>
 
-            <div class="row">
+            <section id="commonWordsSection" class="hide">
+            <div class="row" >
                 <div class="col-ld-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
@@ -107,6 +112,7 @@
                     </div>
                 </div>
             </div>
+            </section>
 
         </div>
 

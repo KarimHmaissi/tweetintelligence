@@ -44,7 +44,12 @@ class TwitterDownloadService {
         def idsArray = new long[99]
 
         //TODO check if number of followers returned is over 100
-        System.arraycopy(getFollowersIDsResponse.ids,0,idsArray,0,99)
+        if(getFollowersIDsResponse.ids.size() > 99) {
+            System.arraycopy(getFollowersIDsResponse.ids,0,idsArray,0,99)
+        } else {
+            System.arraycopy(getFollowersIDsResponse.ids,0,idsArray,0,getFollowersIDsResponse.ids.size() - 1)
+        }
+
 
         //TODO add exception handling here - TwitterException
         def followers = twitter.lookupUsers(idsArray)
@@ -71,6 +76,8 @@ class TwitterDownloadService {
             } catch (Exception e) {
                 println "Error saving follower: " + e.message
                 println "Error saving follower: " + e.toString()
+                loggedInUser.initialDataLoaded = true
+                loggedInUser.save()
             }
         }
     }
@@ -123,6 +130,8 @@ class TwitterDownloadService {
                 } catch (Exception e) {
                     println "Error saving tweet: " + e.message
                     println "Error saving tweet: " + e.toString()
+                    loggedInUser.initialDataLoaded = true
+                    loggedInUser.save()
                 }
             }
 

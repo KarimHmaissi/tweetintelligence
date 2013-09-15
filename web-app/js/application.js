@@ -47,6 +47,9 @@ function loadData() {
         loadTopDomains(data.topDomains);
         loadMostUsedWords(data.commonWords);
 
+        //remove loading gif and show sections
+        finishedLoading();
+
         //Add fixed header to tables
         setUpFixedHeader();
     });
@@ -155,6 +158,19 @@ function setUpWordCloud(container, data) {
 
     $container.jQCloud( data );
 
+}
+
+function finishedLoading() {
+    var $sections = $('section'),
+        $loading = $('.loading');
+
+    $loading.each(function(i, obj) {
+        $(obj).addClass('hide');
+    });
+
+    $sections.each(function(i, obj) {
+        $(obj).removeClass('hide');
+    });
 }
 
 /**
