@@ -32,7 +32,7 @@ class MainScreenController {
 
             //check if this if the first time user has logged in
             if (!user.initialDataLoaded) {
-                twitterDownloadService.beginDownload(user)
+//                twitterDownloadService.beginDownload(user)
             }
 
             def followers = Follower.findAllByOwner(user)

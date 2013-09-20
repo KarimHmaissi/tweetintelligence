@@ -38,14 +38,14 @@ class TwitterDownloadService {
      */
     private downloadFollowers(twitter, loggedInUser) {
 
-        //TODO limited implementation. Only downloads 100 followers
+        //TODO limited implementation. Only downloads 50 followers
 
         def getFollowersIDsResponse = twitter.getFollowersIDs(-1)
-        def idsArray = new long[99]
+        def idsArray = new long[49]
 
-        //TODO check if number of followers returned is over 100
-        if(getFollowersIDsResponse.ids.size() > 99) {
-            System.arraycopy(getFollowersIDsResponse.ids,0,idsArray,0,99)
+        //TODO check if number of followers returned is over 50
+        if(getFollowersIDsResponse.ids.size() > 49) {
+            System.arraycopy(getFollowersIDsResponse.ids,0,idsArray,0,49)
         } else {
             System.arraycopy(getFollowersIDsResponse.ids,0,idsArray,0,getFollowersIDsResponse.ids.size() - 1)
         }
@@ -77,7 +77,7 @@ class TwitterDownloadService {
                 println "Error saving follower: " + e.message
                 println "Error saving follower: " + e.toString()
                 loggedInUser.initialDataLoaded = true
-                loggedInUser.save()
+                loggedInUser.save(flush:true)
             }
         }
     }
@@ -131,7 +131,7 @@ class TwitterDownloadService {
                     println "Error saving tweet: " + e.message
                     println "Error saving tweet: " + e.toString()
                     loggedInUser.initialDataLoaded = true
-                    loggedInUser.save()
+                    loggedInUser.save(flush: true)
                 }
             }
 

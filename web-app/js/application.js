@@ -12,9 +12,11 @@
 * On page load
 */
 function init() {
+    console.log("called init...")
     var $twitterAuth = $('#twitterAuthBtn');
 
     $twitterAuth.click(function() {
+        console.log("logging in ...")
         login();
     });
 }
@@ -25,7 +27,8 @@ function login() {
     OAuth.popup('twitter', function(error, result) {
 
         //TODO implement error condition
-
+        console.log(error)
+        console.log("redirecting user...")
         //redirect user to main screen after logging in
         window.location = 'auth/loginTwitterUser' + '?token=' + result.oauth_token +
             '&tokenSecret=' + result.oauth_token_secret;

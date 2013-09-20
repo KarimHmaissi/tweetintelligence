@@ -12,54 +12,65 @@
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700,300italic,700italic|Bitter:400,700,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic|Muli:300,400,300italic' rel='stylesheet' type='text/css'>
+
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
     <g:layoutHead/>
     <r:layoutResources />
 </head>
 <body>
-    <!--[if lt IE 7]>
+<!--[if lt IE 7]>
                 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
             <![endif]-->
 
+
+
+<header> <!--Start of header-->
+    <nav class="navigation">
+        <div class="logo-wrapper">
+            <!--<img src="img/logo.png" alt="Twitter Intelligence" />-->
+            <a class="logo" href="#"><h2>TwitterIntelligence.Com</h2></a>
+        </div>
+        <div class="container">
+            <ul class="nav-links">
+
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="" class="btn btn-info">Login With Twitter</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header> <!--End of header-->
+
+<g:layoutBody/>
+
+<!--Footer-->
+<footer>
     <div class="container">
-
-        <!--Nav Panel-->
-    <div class="header">
-        <ul class="nav nav-pills pull-right">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-        <h3 class="text-muted">Project name</h3>
+        <p>&copy; Company 2013</p>
     </div>
-    <!--End Of Nav Panel-->
+</footer>
+<!--End Of Footer-->
 
-    <g:layoutBody/>
 
-    <!--Footer-->
-    <footer id="footer" class="footer">
-        <p>© Company 2013</p>
-    </footer>
-    <!--End Of Footer-->
+<r:layoutResources />
 
-    </div>
-    <r:layoutResources />
+%{--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>--}%
+%{--<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>--}%
+%{--<script src="js/plugins.js"></script>--}%
 
-    %{--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>--}%
-    %{--<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>--}%
-    <script src="js/plugins.js"></script>
-
-    <!-- Google Analytics -->
-    <script>
-        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-                function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-        ga('create','UA-XXXXX-X');ga('send','pageview');
-    </script>
+<!-- Google Analytics -->
+%{--<script>--}%
+%{--(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=--}%
+%{--function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;--}%
+%{--e=o.createElement(i);r=o.getElementsByTagName(i)[0];--}%
+%{--e.src='//www.google-analytics.com/analytics.js';--}%
+%{--r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));--}%
+%{--ga('create','UA-XXXXX-X');ga('send','pageview');--}%
+%{--</script>--}%
 
 </body>
 </html>

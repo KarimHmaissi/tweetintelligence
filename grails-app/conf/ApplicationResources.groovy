@@ -11,8 +11,8 @@ modules = {
     templateCss {
 
         resource url: 'css/bootstrap.min.css', disposition: 'head'
-        resource url: 'css/bootstrap-theme.min.css', disposition: 'head'
-        resource url: 'css/narrow.css', disposition: 'head'
+//        resource url: 'css/bootstrap-theme.min.css', disposition: 'head'
+//        resource url: 'css/narrow.css', disposition: 'head'
     }
 
     oauth {

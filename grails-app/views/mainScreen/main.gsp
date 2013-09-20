@@ -5,91 +5,67 @@
     <r:require modules="application,oauth,css,templateCss,plugins,modernizr" />
 </head>
 <body>
-        <h1>Twitter Intelligence Main Screen</h1>
+<h1>Twitter Intelligence Main Screen</h1>
 
-        <sec:ifLoggedIn>
-            You are logged in as ${user.username}
-            <g:link controller="logout">sign out</g:link>
-        </sec:ifLoggedIn>
-        <sec:ifNotLoggedIn>
-            <button id="twitterAuthBtn" >Login into twitter</button>
-        </sec:ifNotLoggedIn>
+<sec:ifLoggedIn>
+    You are logged in as ${user.username}
+    <g:link controller="logout">sign out</g:link>
+</sec:ifLoggedIn>
+<sec:ifNotLoggedIn>
+    <button id="twitterAuthBtn" >Login into twitter</button>
+</sec:ifNotLoggedIn>
 
 
-        <div id="resultsData" class="">
+<div id="resultsData" class="">
 
-            <div class="loading">
-                <g:img dir="images" file="logo.png" />
+    <div class="loading">
+        <h3>Loading...</h3>
+        <g:img dir="images" file="loading.gif" />
+    </div>
+
+    <section id="overviewDataSection" class="hide">
+        <div class="container">
+            <div class="row">
+                <div class="col-ld-sd-4">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Overview</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div id="averagesData">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <section id="overviewDataSection" class="hide">
-                <div class="row">
-                    <div class="col-ld-sd-4">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Overview</h3>
-                            </div>
-                            <div class="panel-body">
-                                <div id="averagesData">
-
-                                </div>
-                            </div>
+    <section id="followerDataSection" class="hide">
+        <div class="container">
+            <div class="row">
+                <div class="col-ld-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Follower Data</h3>
                         </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="followerDataSection" class="hide">
-                <div class="row">
-                    <div class="col-ld-12">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Follower Data</h3>
-                            </div>
-                            <div class="panel-body">
-                                <div id="followers" class="table-responsive">
-                                    <div class="overflow">
-                                        <table class="table table-bordered" id="followersTable">
-                                            <thead id="followerTableHeader">
-                                            <tr>
-                                                <th>Profile Picture</th>
-                                                <th>Name</th>
-                                                <th>Profile Creation Date</th>
-                                                <th>Follower Count</th>
-                                                <th>Favourites Count</th>
-                                                <th>Status Count</th>
-                                            </tr>
-                                            </thead>
-
-                                            <tbody id="followersTableBody" class="table-hover">
-
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="topDomainsSection" class="hide">
-                <div class="row">
-                    <div class="col-ld-12">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Most Linked To Domains In Tweets</h3>
-                            </div>
-                            <div class="panel-body overflow">
-                                <div id="topDomains" class="table-responsive">
-                                    <table class="table table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th>Domain</th>
-                                                <th>Count</th>
-                                            </tr>
+                        <div class="panel-body">
+                            <div id="followers" class="table-responsive">
+                                <div class="overflow">
+                                    <table class="table table-bordered" id="followersTable">
+                                        <thead id="followerTableHeader">
+                                        <tr>
+                                            <th>Profile Picture</th>
+                                            <th>Name</th>
+                                            <th>Profile Creation Date</th>
+                                            <th>Follower Count</th>
+                                            <th>Favourites Count</th>
+                                            <th>Status Count</th>
+                                        </tr>
                                         </thead>
-                                        <tbody  id="topDomainsTable" class="table-hover">
+
+                                        <tbody id="followersTableBody" class="table-hover">
 
                                         </tbody>
                                     </table>
@@ -98,9 +74,41 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </div>
+    </section>
 
-            <section id="commonWordsSection" class="hide">
+    <section id="topDomainsSection" class="hide">
+        <div class="container">
+            <div class="row">
+                <div class="col-ld-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Most Linked To Domains In Tweets</h3>
+                        </div>
+                        <div class="panel-body overflow">
+                            <div id="topDomains" class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead>
+                                    <tr>
+                                        <th>Domain</th>
+                                        <th>Count</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody  id="topDomainsTable" class="table-hover">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="commonWordsSection" class="hide">
+        <div class="container">
             <div class="row" >
                 <div class="col-ld-12">
                     <div class="panel panel-primary">
@@ -112,9 +120,10 @@
                     </div>
                 </div>
             </div>
-            </section>
-
         </div>
+    </section>
+
+</div>
 
 </body>
 
