@@ -27,32 +27,39 @@
 
 
 <header> <!--Start of header-->
-    <nav class="navigation">
-        <div class="logo-wrapper">
-            <!--<img src="img/logo.png" alt="Twitter Intelligence" />-->
+
+    <nav class="navbar navbar-default navigation" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
             <a class="logo" href="#"><h2>TwitterIntelligence.Com</h2></a>
         </div>
-        <div class="container">
-            <ul class="nav-links">
 
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
-                <li><a href="" class="btn btn-info">Login With Twitter</a>
-                </li>
+                <li><button href="" class="btn btn-primary login-btn">Login With Twitter</button></li>
             </ul>
-        </div>
+        </div><!-- /.navbar-collapse -->
     </nav>
 </header> <!--End of header-->
 
 <g:layoutBody/>
 
 <!--Footer-->
-<footer>
-    <div class="container">
-        <p>&copy; Company 2013</p>
-    </div>
-</footer>
+%{--<footer>--}%
+    %{--<div class="container">--}%
+        %{--<p>&copy; Company 2013</p>--}%
+    %{--</div>--}%
+%{--</footer>--}%
 <!--End Of Footer-->
 
 

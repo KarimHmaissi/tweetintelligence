@@ -84,7 +84,7 @@ header {
 }
 
 .nav-links li {
-    /*font-family: 'Source Sans Pro', sans-serif;*/
+    font-family: 'Source Sans Pro', sans-serif;
     font-family: 'Muli', sans-serif;
     font-weight: 400;
     font-size: 18px;
@@ -99,6 +99,34 @@ header {
     float:left;
     margin-left: 68px;
 }
+
+.navbar-default {
+    padding-top: 26px;
+    background-color: #fff;
+    border: none;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #2980b9;
+}
+
+.navbar-header {
+    padding-left: 26px;
+    position: relative;
+    top: -16px;
+}
+
+/*Overwrite bootstrap button styling for login button*/
+.navbar-default .navbar-nav>li>button {
+    color: #ffffff
+}
+
+.navbar-default .navbar-nav>li>button:hover {
+    color: #ffffff;
+    background-color: #2980b9;
+    border-color: #000;
+}
+
 
 
 /* ==========================================================================
@@ -134,12 +162,10 @@ header {
 }
 
 .pad-image {
-    position: absolute;
+    position: relative;
     display: block;
     width: 700px;
     height: 450px;
-    right: 20px;
-    top: 32px;
     background: url(../images/pad.png) top left no-repeat;
 }
 
@@ -175,23 +201,14 @@ header {
 .featurette-divider {
     margin: 20px 0; /* Space out the Bootstrap <hr> more */
 }
+
 .featurette {
-    padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
-    overflow: hidden; /* Vertically center images part 2: clear their floats. */
     margin-right: 0px;
-    margin-top: 50px;
-    height: 500px;
-}
-.featurette-image {
-    margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+    margin-top: 100px;
 }
 
-/* Give some space on the sides of the floated elements so text doesn't run right into it. */
-.featurette-image.pull-left {
-    margin-right: 40px;
-}
-.featurette-image.pull-right {
-    margin-left: 40px;
+.featurette-image {
+
 }
 
 /* Thin out the marketing headings */
@@ -203,13 +220,26 @@ header {
 }
 
 /* Slide in animation */
-.featurette-animation {
-    margin-right: 1200px;
+.featurette-animation-left {
+    position: relative;
+    left: 1000px;
+
     -webkit-transition: 0.6s ease;
 }
 
-.featurette-change {
-    margin-right: 0px;
+.featurette-change-left {
+    left: 0;
+}
+
+.featurette-animation-right {
+    position: relative;
+    right: 1000px;
+
+    -webkit-transition: 0.6s ease;
+}
+
+.featurette-change-right {
+    right: 0;
 }
 
 
@@ -239,6 +269,16 @@ header {
 
 .device-change {
     opacity: 1;
+}
+
+
+/* ==========================================================================
+   Final CTA
+   ========================================================================== */
+
+.final-cta {
+    background-color: #000000;
+    padding-bottom: 72px;
 }
 
 
@@ -296,7 +336,39 @@ footer {
 
 /* Landscape phones and down */
 @media (max-width: 480px) {
+    .featurette {
+        padding-top: 0px;
+        margin-top: 50px;
+        margin-bottom: 24px;
+    }
 
+    .featurette-image {
+        display:none;
+    }
+
+    .pad-image {
+        display:none;
+    }
+
+    .main-message {
+        text-align: center;
+    }
+
+    .navbar-default {
+        background-color: #f8f8f8;
+        border-color: #e7e7e7;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 765px) {
+    .pad-image {
+        display:none;
+    }
+
+    .navbar-default {
+        background-color: #f8f8f8;
+        border-color: #e7e7e7;
+    }
 }
 
 /* Landscape phone to portrait tablet */
@@ -329,6 +401,18 @@ footer {
     h1.margin-bottom-lg {
         margin-bottom: 24px;
     }
+
+    .featurette-image {
+        margin-top: 20px;
+        width: 300px;
+    }
+
+    .featurette {
+        margin-top: 50px;
+        padding-top: 0px;
+        height:400px;
+    }
+
 
 }
 
@@ -380,7 +464,9 @@ footer {
     padding-left: 0px;
 }
 
-
+.hidden-overflow {
+    overflow: hidden;
+}
 
 
 

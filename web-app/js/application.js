@@ -13,11 +13,13 @@
 */
 function init() {
     console.log("called init...")
-    var $twitterAuth = $('#twitterAuthBtn');
+    var $twitterAuth = $('.login-btn');
 
-    $twitterAuth.click(function() {
-        console.log("logging in ...")
-        login();
+    $twitterAuth.each(function(i, obj) {
+        $(obj).click(function() {
+            console.log("logging in ...")
+            login();
+        });
     });
 
     loadAnimations();
@@ -29,8 +31,8 @@ function login() {
     OAuth.popup('twitter', function(error, result) {
 
         //TODO implement error condition
-        console.log(error)
         console.log("redirecting user...")
+
         //redirect user to main screen after logging in
         window.location = 'auth/loginTwitterUser' + '?token=' + result.oauth_token +
             '&tokenSecret=' + result.oauth_token_secret;
@@ -51,7 +53,7 @@ function loadData() {
         loadFollowerData(data.followerData);
         loadTopDomains(data.topDomains);
         loadMostUsedWords(data.commonWords);
-        loadProfileCreationDates(data.profileCreationDates);
+//        loadProfileCreationDates(data.profileCreationDates);
 
 
         //remove loading gif and show sections
@@ -215,15 +217,30 @@ function loadAnimations() {
     if (Modernizr.csstransitions) {
 
         //Add slide in animation for features
-        var $features = $('.featurette');
+        var $featuresLeft = $('.featurette-left'),
+            $featuresRight = $('.featurette-right');
 
-        $features.each(function(i, obj) {
+
+        //Add left animation
+        $featuresLeft.each(function(i, obj) {
 
             var $feature = $(obj);
-            $feature.addClass('featurette-animation');
+            $feature.addClass('featurette-animation-left');
 
             $feature.waypoint(function() {
-                $feature.addClass('featurette-change');
+                $feature.addClass('featurette-change-left');
+            }, { offset: 450 });
+
+        });
+
+        //Add right animation
+        $featuresRight.each(function(i, obj) {
+
+            var $feature = $(obj);
+            $feature.addClass('featurette-animation-right');
+
+            $feature.waypoint(function() {
+                $feature.addClass('featurette-change-right');
             }, { offset: 450 });
 
         });
