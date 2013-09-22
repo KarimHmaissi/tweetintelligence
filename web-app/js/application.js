@@ -19,6 +19,8 @@ function init() {
         console.log("logging in ...")
         login();
     });
+
+    loadAnimations();
 }
 
 function login() {
@@ -49,12 +51,14 @@ function loadData() {
         loadFollowerData(data.followerData);
         loadTopDomains(data.topDomains);
         loadMostUsedWords(data.commonWords);
+        loadProfileCreationDates(data.profileCreationDates);
+
 
         //remove loading gif and show sections
         finishedLoading();
 
-        //Add fixed header to tables
-        setUpFixedHeader();
+//        //Add fixed header to tables
+//        setUpFixedHeader();
     });
 }
 
@@ -163,6 +167,31 @@ function setUpWordCloud(container, data) {
 
 }
 
+
+/**
+ * Loads a chart displaying the dates followers profiles were created.
+ * Uses the jQuery plugin flot http://www.flotcharts.org/
+ * @param data
+ */
+function loadProfileCreationDates(data) {
+
+    //Get width of chart wrapper
+    var $chartWrapper = $('#profileDate'),
+        $chart = $('#profileDateChart'),
+        chartWrapperWidth = $chartWrapper.width();
+
+    //Set width of chart to match wrapper
+    $chart.css('width', '600px');
+
+    var plot = $.plot('#profileDateChart', [data], {
+        xaxis: {
+            mode: "time"
+        }
+    });
+
+}
+
+
 function finishedLoading() {
     var $sections = $('section'),
         $loading = $('.loading');
@@ -176,25 +205,39 @@ function finishedLoading() {
     });
 }
 
-/**
- * Fixed header hack
- */
-function setUpFixedHeader() {
-//    var $FollowerTableHack = $('table#tableHack'),
-//        $followerTableHeader = $('thead#followerTableHeader'),
-//        $followerTable = $('table#followersTable');
-//
-//    $FollowerTableHack.append($followerTableHeader.clone());
-//
-//
-//    $followerTable.find('tbody')
-//        .first()
-//        .clone()
-//        .appendTo($('<tbody />'))
-//        .appendTo($FollowerTableHack)
-//
-//
-//    $followerTableHeader.addClass('hide');
 
+/**
+ * Uses the plugin waypoints to trigger a slide in animation on feature elements
+ */
+function loadAnimations() {
+
+    //if browser supports modern css3 transitions
+    if (Modernizr.csstransitions) {
+
+        //Add slide in animation for features
+        var $features = $('.featurette');
+
+        $features.each(function(i, obj) {
+
+            var $feature = $(obj);
+            $feature.addClass('featurette-animation');
+
+            $feature.waypoint(function() {
+                $feature.addClass('featurette-change');
+            }, { offset: 450 });
+
+        });
+
+        //Add fade in animation for device image
+        var $devices = $('.devices'),
+            $devicesSection = $('.multi-devices');
+
+        $devices.addClass('device-animation');
+
+        $devicesSection.waypoint(function() {
+            $devices.addClass('device-change');
+        }, { offset: 200 });
+
+    }
 }
 

@@ -1,6 +1,7 @@
 modules = {
     application {
         resource url: 'js/application.js'
+        dependsOn('plugins')
     }
 
     css {
@@ -28,6 +29,16 @@ modules = {
         resource url: 'js/plugins/jqcloud/jqcloud.css'
         resource url: 'js/plugins/jqcloud/jqcloud-1.0.4.min.js'
         resource url: 'js/plugins/fixedheadertable.min.js'
+        resource url: 'js/plugins/waypoints.min.js'
+//
+
+    }
+
+    flot {
+
+        resource url: 'js/plugins/flot/jquery.flot.js'
+        resource url: 'js/plugins/flot/jquery.flot.time.js'
+        resource url: 'js/plugins/flot/date.js'
     }
 
     bootstrap {

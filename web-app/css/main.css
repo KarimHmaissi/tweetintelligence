@@ -23,7 +23,7 @@ h1, h2, h3 {
 
 }
 
-h1.hero-heading {
+.hero-heading {
     font-size: 48px;
     line-height: 54px;
     font-weight: 300;
@@ -136,7 +136,7 @@ header {
 .pad-image {
     position: absolute;
     display: block;
-    width: 650px;
+    width: 700px;
     height: 450px;
     right: 20px;
     top: 32px;
@@ -178,6 +178,9 @@ header {
 .featurette {
     padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
     overflow: hidden; /* Vertically center images part 2: clear their floats. */
+    margin-right: 0px;
+    margin-top: 50px;
+    height: 500px;
 }
 .featurette-image {
     margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
@@ -199,6 +202,18 @@ header {
     letter-spacing: -1px;
 }
 
+/* Slide in animation */
+.featurette-animation {
+    margin-right: 1200px;
+    -webkit-transition: 0.6s ease;
+}
+
+.featurette-change {
+    margin-right: 0px;
+}
+
+
+
 
 /* ==========================================================================
    Any device section
@@ -215,6 +230,15 @@ header {
 .devices {
     text-align: center;
     margin-top: -244px;
+}
+
+.device-animation {
+    opacity: 0;
+    -webkit-transition: 0.25s ease;
+}
+
+.device-change {
+    opacity: 1;
 }
 
 
@@ -263,6 +287,54 @@ header {
 footer {
     background-color: #000;
     color: #fff;
+}
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+    .pad-image {
+        width: 371px;
+    }
+
+    h1.hero-heading {
+        font-size: 36px;
+        line-height: 36px;
+    }
+
+    h1.margin-bottom-lg {
+        margin-bottom: 24px;
+    }
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+    .pad-image {
+        width: 576px;
+    }
+
+    h1.hero-heading {
+        font-size: 36px;
+        line-height: 39px;
+    }
+
+    h1.margin-bottom-lg {
+        margin-bottom: 24px;
+    }
+
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {
+
 }
 
 

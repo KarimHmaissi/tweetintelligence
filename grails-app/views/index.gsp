@@ -12,7 +12,7 @@
             <div class="hero-bg"></div>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-lg-6 col-md-6 col-sm-5 col-xs-7">
                         <div class="main-message">
                             <h1 class="hero-heading margin-bottom-lg">Understand your twitter followers needs and interests </h1>
                             <p class="cta-tag">100% FREE. No Credit Card Needed</p>
@@ -46,19 +46,20 @@
                 </div>
 
                 <div class="container">
-                    <div class="featurette">
-                        <g:img class="featurette-image pull-right" dir="images" file="browser-icon-chrome.png" />
+
+                    <div id="feature1" class="featurette">
+                        <g:img class="featurette-image pull-right" dir="images" file="profileDatesChart.png" />
                         <h2 class="featurette-heading">First featurette headling. <span class="muted">It'll blow your mind.</span></h2>
                         <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
                     </div>
 
-                    <div class="featurette">
+                    <div id="feature2" class="featurette">
                         <g:img class="featurette-image pull-left" dir="images" file="browser-icon-firefox.png" />
                         <h2 class="featurette-heading">Oh yeah, it's that good. <span class="muted">See for yourself.</span></h2>
                         <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
                     </div>
 
-                    <div class="featurette">
+                    <div id="feature3" class="featurette">
                         <g:img class="featurette-image pull-right" dir="images" file="browser-icon-safari.png" />
                         <h2 class="featurette-heading">And lastly, this one. <span class="muted">Checkmate.</span></h2>
                         <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>

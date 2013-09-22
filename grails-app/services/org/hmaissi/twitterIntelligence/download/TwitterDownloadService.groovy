@@ -22,8 +22,6 @@ class TwitterDownloadService {
 
         Twitter twitter = twitter4jService.connect(loggedInUser.accessToken, loggedInUser.secretToken)
 
-//        def tweetsResponse = twitter.getUserTimeline("KarimHmaissi")
-
         downloadFollowers(twitter, loggedInUser)
         downloadFollowersTweets(twitter, loggedInUser)
 
@@ -43,7 +41,6 @@ class TwitterDownloadService {
         def getFollowersIDsResponse = twitter.getFollowersIDs(-1)
         def idsArray = new long[49]
 
-        //TODO check if number of followers returned is over 50
         if(getFollowersIDsResponse.ids.size() > 49) {
             System.arraycopy(getFollowersIDsResponse.ids,0,idsArray,0,49)
         } else {
@@ -76,6 +73,7 @@ class TwitterDownloadService {
             } catch (Exception e) {
                 println "Error saving follower: " + e.message
                 println "Error saving follower: " + e.toString()
+
                 loggedInUser.initialDataLoaded = true
                 loggedInUser.save(flush:true)
             }
@@ -91,8 +89,8 @@ class TwitterDownloadService {
         def followers = Follower.findAllByOwner(loggedInUser)
 
         //TODO limited implementation. Only download tweets for 100 followers and only downloads 20 tweets for each
-        if (followers.size() > 99) {
-            followers = followers.subList(0, 99)
+        if (followers.size() > 49) {
+            followers = followers.subList(0, 49)
         }
 
         for(def follower : followers) {
