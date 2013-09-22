@@ -7,6 +7,8 @@ import java.text.SimpleDateFormat
 
 class AnalyseDataService {
 
+    def webCrawlerService
+
     def beginAnalysis(followers, tweets) {
 
         def result = [
@@ -170,49 +172,49 @@ class AnalyseDataService {
      */
     def getProfileCreationDates(followers) {
 //        final String TWITTER="EEE MMM dd HH:mm:ss ZZZZZ yyyy";
-        final String TWITTER="yyyy-MM-dd HH:mm:ss.S";
-        SimpleDateFormat sf = new SimpleDateFormat(TWITTER, Locale.ENGLISH);
-        sf.setLenient(true);
-
-        Random rand = new Random()
-        def times = [:]
-        def monthInMilliSeconds = 2592000000
-
-        for(Follower follower : followers) {
-            def timeInMilli = sf.parse(follower.profileCreatedDate.toString()).getTime()
-
-            def loggedTime = false
-
-            //Loops over each time already logged and checks if new time is within a month of the old time
-            for(def time : times.keySet()) {
-                if(withinTimeRange(monthInMilliSeconds, timeInMilli, time)) {
-                    times.put(time, times.get(time) + 1)
-                    loggedTime = true
-                    break
-                }
-            }
-
-            if (!loggedTime) {
-                times.put(timeInMilli, 1)
-            }
-        }
-
-        def timeArray = []
-
-        //Convert map to array of arrays
-        for(def timeKey: times.keySet()) {
-            def singleTime = []
-            singleTime.add(timeKey)
-            singleTime.add(times.get(timeKey))
-
-            timeArray.add(singleTime)
-
-        }
-
-        //Place array entries in chronological order
-        timeArray = timeArray.sort {-it.get(0)}
-
-        return timeArray
+//        final String TWITTER="yyyy-MM-dd HH:mm:ss.S";
+//        SimpleDateFormat sf = new SimpleDateFormat(TWITTER, Locale.ENGLISH);
+//        sf.setLenient(true);
+//
+//        Random rand = new Random()
+//        def times = [:]
+//        def monthInMilliSeconds = 2592000000
+//
+//        for(Follower follower : followers) {
+//            def timeInMilli = sf.parse(follower.profileCreatedDate.toString()).getTime()
+//
+//            def loggedTime = false
+//
+//            //Loops over each time already logged and checks if new time is within a month of the old time
+//            for(def time : times.keySet()) {
+//                if(withinTimeRange(monthInMilliSeconds, timeInMilli, time)) {
+//                    times.put(time, times.get(time) + 1)
+//                    loggedTime = true
+//                    break
+//                }
+//            }
+//
+//            if (!loggedTime) {
+//                times.put(timeInMilli, 1)
+//            }
+//        }
+//
+//        def timeArray = []
+//
+//        //Convert map to array of arrays
+//        for(def timeKey: times.keySet()) {
+//            def singleTime = []
+//            singleTime.add(timeKey)
+//            singleTime.add(times.get(timeKey))
+//
+//            timeArray.add(singleTime)
+//
+//        }
+//
+//        //Place array entries in chronological order
+//        timeArray = timeArray.sort {-it.get(0)}
+//
+//        return timeArray
 
     }
 
