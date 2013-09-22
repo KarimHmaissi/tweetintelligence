@@ -38,7 +38,7 @@ class MainScreenController {
             def followers = Follower.findAllByOwner(user)
             def tweets = Tweet.findAllByUser(user)
 
-            render analyseDataService.beginAnalysis(followers, tweets) as JSON
+            render analyseDataService.beginAnalysis(followers, tweets, user) as JSON
 
 
 

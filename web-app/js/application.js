@@ -53,7 +53,7 @@ function loadData() {
         loadFollowerData(data.followerData);
         loadTopDomains(data.topDomains);
         loadMostUsedWords(data.commonWords);
-//        loadProfileCreationDates(data.profileCreationDates);
+        loadProfileCreationDates(data.profileCreationDates);
 
 
         //remove loading gif and show sections
