@@ -7,7 +7,6 @@ html {
 }
 
 body {
-    /*font-family: 'Source Sans Pro', sans-serif;*/
     font-family: 'Muli', sans-serif;
     font-weight: 400;
     font-size: 16px;
@@ -18,9 +17,8 @@ body {
     position: relative;
 }
 
-h1, h2, h3 {
+h1,h2,h3 {
     font-family: 'Lato', sans-serif;
-
 }
 
 .hero-heading {
@@ -35,7 +33,6 @@ h2 {
     font-weight: 300;
     color: #2980b9;
     text-align: center;
-
 }
 
 h2.main-title {
@@ -43,11 +40,12 @@ h2.main-title {
 }
 
 .cta-tag {
-    color:white;
+    color: white;
     font-size: 18px;
     font-weight: 400;
     line-height: 18px;
 }
+
 
 
 /* ==========================================================================
@@ -62,20 +60,18 @@ header {
     padding: 0;
     margin: 0;
     top: 0;
-
     background-color: #fff;
 }
 
 .navigation {
     position: absolute;
-    /*top: 24px;*/
     width: 100%;
     text-align: right;
     padding-right: 20px;
 }
 
 .nav-links {
-    height:36px;
+    height: 36px;
     margin-top: 20px;
 }
 
@@ -84,7 +80,6 @@ header {
 }
 
 .nav-links li {
-    font-family: 'Source Sans Pro', sans-serif;
     font-family: 'Muli', sans-serif;
     font-weight: 400;
     font-size: 18px;
@@ -96,7 +91,7 @@ header {
 
 .logo-wrapper {
     text-align: left;
-    float:left;
+    float: left;
     margin-left: 68px;
 }
 
@@ -118,7 +113,7 @@ header {
 
 /*Overwrite bootstrap button styling for login button*/
 .navbar-default .navbar-nav>li>button {
-    color: #ffffff
+    color: #ffffff;
 }
 
 .navbar-default .navbar-nav>li>button:hover {
@@ -134,12 +129,17 @@ header {
    ========================================================================== */
 
 .logo:hover {
-    text-decoration:none;
+    text-decoration: none;
 }
 
 .logo h2:hover {
     -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
 }
+
 
 
 /* ==========================================================================
@@ -207,10 +207,6 @@ header {
     margin-top: 100px;
 }
 
-.featurette-image {
-
-}
-
 /* Thin out the marketing headings */
 .featurette-heading {
     font-size: 50px;
@@ -225,6 +221,10 @@ header {
     left: 1000px;
 
     -webkit-transition: 0.6s ease;
+    -moz-transition: 0.6s ease;
+    -o-transition: 0.6s ease;
+    -ms-transition: 0.6s ease;
+    transition: 0.6s ease;
 }
 
 .featurette-change-left {
@@ -236,13 +236,15 @@ header {
     right: 1000px;
 
     -webkit-transition: 0.6s ease;
+    -moz-transition: 0.6s ease;
+    -o-transition: 0.6s ease;
+    -ms-transition: 0.6s ease;
+    transition: 0.6s ease;
 }
 
 .featurette-change-right {
     right: 0;
 }
-
-
 
 
 /* ==========================================================================
@@ -263,11 +265,20 @@ header {
 }
 
 .device-animation {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
     opacity: 0;
+
     -webkit-transition: 0.25s ease;
+    -moz-transition: 0.25s ease;
+    -o-transition: 0.25s ease;
+    -ms-transition: 0.25s ease;
+    transition: 0.25s ease;
 }
 
 .device-change {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
     opacity: 1;
 }
 
@@ -296,14 +307,12 @@ header {
     background-color: #2980b9;
     color: #fff;
     border-color: #fff;
-
 }
 
 .btn-primary {
     border-color: #fff;
     background-color: #2980b9;
     color: #fff;
-
 }
 
 .btn-primary:hover {
@@ -313,7 +322,7 @@ header {
 }
 
 .btn-success {
-    width:202px;
+    width: 202px;
     border-color: #fff;
     background-color: #fff;
     color: #2980b9;
@@ -343,11 +352,11 @@ footer {
     }
 
     .featurette-image {
-        display:none;
+        display: none;
     }
 
     .pad-image {
-        display:none;
+        display: none;
     }
 
     .main-message {
@@ -358,17 +367,19 @@ footer {
         background-color: #f8f8f8;
         border-color: #e7e7e7;
     }
+
 }
 
 @media (min-width: 481px) and (max-width: 765px) {
     .pad-image {
-        display:none;
+        display: none;
     }
 
     .navbar-default {
         background-color: #f8f8f8;
         border-color: #e7e7e7;
     }
+
 }
 
 /* Landscape phone to portrait tablet */
@@ -385,6 +396,7 @@ footer {
     h1.margin-bottom-lg {
         margin-bottom: 24px;
     }
+
 }
 
 /* Portrait tablet to landscape and desktop */
@@ -410,14 +422,8 @@ footer {
     .featurette {
         margin-top: 50px;
         padding-top: 0px;
-        height:400px;
+        height: 400px;
     }
-
-
-}
-
-/* Large desktop */
-@media (min-width: 1200px) {
 
 }
 
@@ -455,7 +461,7 @@ footer {
 }
 
 .overflow {
-    height:400px;
+    height: 400px;
     overflow: scroll;
 }
 
@@ -467,6 +473,7 @@ footer {
 .hidden-overflow {
     overflow: hidden;
 }
+
 
 
 
